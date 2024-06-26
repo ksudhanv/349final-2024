@@ -1,0 +1,69 @@
+<HTML>
+    <head>
+        <title>Clicker Game</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <a class="aboutButton" href="about.html">About</a>
+        </header>
+        <div class="content">
+            <img src="Camera.png" onclick="gainMoney(10)" id="camera">
+            <p>Money: $<span id="score">0</span></p>
+            <div class="upgrades">
+                <div class="area">
+                    <p>Scriptwriters: <span id="writers">0</span></p>
+                    <div class="button" onclick="buyWriter()"><p class="label">Buy $<span id="writerCost">100</span></p></div>
+                </div>
+                <div class="area">
+                    <p>Interns: <span id="interns">0</span></p>
+                    <div class="button" onclick="buyIntern()"><p class="label">Buy $<span id="internCost">50</span></p></div>
+                </div>
+            </div>
+            <script>
+                var score = 0;
+                var writerCost = 100;
+                var writers = 0;
+                var interns = 0;
+                var internCost = 50;
+
+                function buyWriter(){
+                    if(score >= writerCost){
+                        score = score-writerCost;
+                        writers = writers + 1;
+                        writerCost = Math.round(writerCost*1.15);
+
+                        document.getElementById("score").innerHTML = score;
+                        document.getElementById("writerCost").innerHTML = writerCost;
+                        document.getElementById("writers").innerHTML = writers;
+
+                    }
+                }
+
+                function buyIntern(){
+                    if(score >= internCost){
+                        score = score-internCost;
+                        interns = interns + 1;
+                        internCost = Math.round(internCost*1.15);
+
+                        document.getElementById("score").innerHTML = score;
+                        document.getElementById("internCost").innerHTML = internCost;
+                        document.getElementById("interns").innerHTML = interns;
+
+                    }
+                }
+
+                function gainMoney(amount){
+                    score = score + amount;
+                    document.getElementById("score").innerHTML = score;
+                }
+
+                setInterval(function(){
+                    score = score + Math.round(writers*25.2);
+                    score = score + Math.round(interns*12);
+                    document.getElementById("score").innerHTML = score;
+                }, 1000)
+            </script>
+        </div>
+    </body>
+</HTML>

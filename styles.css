@@ -1,0 +1,63 @@
+
+body{
+    background-image: url("movieset.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#camera{
+    padding-right: 100px;
+}
+p{
+    font-size: 40px;
+    color: white;
+}
+.button{
+    margin-left: 1vw;
+    background-color: #4c530b;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 10vh;
+    margin-top: 3.75vh;
+    border-radius: 10px;
+}
+.area{
+    display: flex;
+    flex-direction: row;
+    padding-left: 15vw;
+}
+.upgrades{
+    display: flex;
+    flex-direction: row;
+}
+.label{
+    font-size: 20px;
+    color: black;
+}
+header{
+    text-align: left;
+    padding-bottom: 10vh;
+    margin-top: 5vh;
+    margin-left: 1vw;
+}
+.aboutButton{
+    margin-left: 1vw;
+    color: white;
+    text-decoration: none;
+}
+.content{
+    background-color: black;
+    padding-top: 7vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 7vh;
+    border-radius: 50px;
+}
+h1{
+    font-size: 40px;
+    color: white;
+}
+.aboutsection{
+    font-size: 20px;
+}
